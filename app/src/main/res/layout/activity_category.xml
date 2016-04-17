@@ -40,6 +40,16 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:typeface="monospace"
+        android:background = "#ffffff"
+        android:id="@+id/contacts_list"
+        android:layout_below="@+id/category_contacts_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +68,7 @@
         android:textSize="20dp"
         android:text="Create Group"
         android:typeface="monospace"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="54dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

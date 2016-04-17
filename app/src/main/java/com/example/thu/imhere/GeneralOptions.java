@@ -30,6 +30,15 @@ public class GeneralOptions extends FragmentActivity {
         //get Buttons
         Button groups_button=(Button)findViewById(R.id.groups_button);
         Button templates_button=(Button)findViewById(R.id.templates_button);
+        // when user presses templates_button
+        templates_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent templates = new Intent(GeneralOptions.this, Templates.class);
+                startActivity(templates);
+            }
+        });
+
 
 
         // Defined Array values to show in ListView
