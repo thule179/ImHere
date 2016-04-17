@@ -15,8 +15,7 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     Button signup_button, login_button;
-    EditText editTextUsername, editTextPass;
-    DatabaseHelper LoginDb;
+    EditText username, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,22 +24,14 @@ public class Login extends AppCompatActivity {
 
         login_button = (Button) findViewById(R.id.login_button);
         signup_button = (Button) findViewById(R.id.signup_button);
-        editTextUsername = (EditText) findViewById(R.id.username);
-        editTextPass = (EditText) findViewById(R.id.password);
-        LoginDb = new DatabaseHelper(this);
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
 
         // when user presses "Login"
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String username = editTextUsername.getText().toString();
-                String password = editTextPass.getText().toString();
-
-                // retrieve stored password from database
-                String storedPassword = LoginDb.checkLogin(username);
-
-                if (password.equals(storedPassword)) {
+                if ((username.getText().toString().trim().length() > 0) && (password.getText().toString().trim().length() > 0)) {
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     Intent first_category = new Intent(Login.this, FirstCategory.class);
                     startActivity(first_category);
