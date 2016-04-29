@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
 
                 if (password.equals(storedPassword)) {
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
-                    Intent first_category = new Intent(Login.this, FirstCategory.class);
+                    Intent first_category = new Intent(Login.this, MainActivity.class);
                     startActivity(first_category);
 
                 } else {
