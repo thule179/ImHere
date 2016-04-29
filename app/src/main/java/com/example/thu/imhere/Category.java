@@ -28,7 +28,6 @@ public class Category extends AppCompatActivity {
     public static String phone_number;
     EditText contacts_list;
     static final int PICK_CONTACT = 1;
-
     public static String getNumber(){
         return phone_number;
     }
@@ -42,14 +41,12 @@ public class Category extends AppCompatActivity {
         create_group.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent general_options = new Intent(Category.this, GeneralOptions.class);
+                Intent general_options = new Intent(Category.this, ViewGroup.class);
                 startActivity(general_options);
             }
         });
         // add Contacts
         addContact = (Button) findViewById(R.id.add_contact_button);
-
-
         addContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
