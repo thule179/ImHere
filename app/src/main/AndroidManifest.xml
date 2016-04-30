@@ -22,8 +22,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstCategory"
-            android:label="@string/title_activity_first_category"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Signup"
@@ -34,8 +34,8 @@
             android:label="@string/title_activity_category"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GeneralOptions"
-            android:label="@string/title_activity_general_options"
+            android:name=".ViewGroup"
+            android:label="@string/title_activity_view_group"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Templates"
@@ -44,6 +44,10 @@
         <activity
             android:name=".CreateTemplate"
             android:label="@string/title_activity_create_template"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Message"
+            android:label="Message"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
