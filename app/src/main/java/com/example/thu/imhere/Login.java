@@ -1,6 +1,8 @@
 package com.example.thu.imhere;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,6 +30,7 @@ public class Login extends AppCompatActivity {
         editTextUsername = (EditText) findViewById(R.id.username);
         editTextPass = (EditText) findViewById(R.id.password);
         LoginDb = new DatabaseHelper(this);
+        final SharedPreferences mSettings = getSharedPreferences("Settings", 0);
 
         // when user presses "Login"
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +43,11 @@ public class Login extends AppCompatActivity {
                 String storedPassword = LoginDb.checkLogin(username);
 
                 if (password.equals(storedPassword)) {
+
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putString("current_username", username);
+                    editor.commit();
+
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     Intent first_category = new Intent(Login.this, MainActivity.class);
                     startActivity(first_category);
