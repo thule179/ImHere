@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.provider.Contacts;
 import android.provider.ContactsContract;
 
+import com.example.thu.imhere.getset.SelectUser;
+
 
 public class Message extends AppCompatActivity {
     Button Send, addGroup, addTemplate;
@@ -49,8 +51,10 @@ public class Message extends AppCompatActivity {
         addGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                startActivityForResult(intent, PICK_CONTACT);
+               /* Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                startActivityForResult(intent, PICK_CONTACT);*/
+                Intent contact_list = new Intent(Message.this, ContactsList.class);
+                startActivity(contact_list);
             }
 
         });
@@ -58,7 +62,10 @@ public class Message extends AppCompatActivity {
         Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendSMS(phone_number, "Hi! How are you?");
+                SelectUser chooseUser = new SelectUser();
+                String phone_number = new String();
+                phone_number = chooseUser.getPhone();
+                sendSMS("2818657070","Hi! How are you?");
             }
         });
 
