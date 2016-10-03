@@ -79,7 +79,7 @@ public class Message extends AppCompatActivity {
                 SelectUser chooseUser = new SelectUser();
                 String phone_number = new String();
                 phone_number = chooseUser.getPhone();
-                //sendSMS("2818657070","Hi! How are you?");
+                //sendSMS("000-000-0000","Hi! How are you?");
             }
         });
 
